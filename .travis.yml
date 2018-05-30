@@ -1,8 +1,8 @@
 language: C
+install: sudo apt-get install autotools-dev
 script:
   - ./configure && make
   - tests/test1.sh
-  - tests/test2.sh
 notifications:
   email:
     recipients:
