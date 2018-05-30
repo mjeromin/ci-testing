@@ -1,4 +1,8 @@
 language: C
+script:
+  - ./configure && make
+  - tests/test1.sh
+  - tests/test2.sh
 notifications:
   email:
     recipients:
