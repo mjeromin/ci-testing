@@ -1,7 +1,2 @@
 aclocal.m4
-compile
-configure.ac
-depcomp
-Makefile.am
-missing
 autom4te.cache
