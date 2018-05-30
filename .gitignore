@@ -1,0 +1,8 @@
+aclocal.m4
+compile
+configure.ac
+depcomp
+install-sh
+Makefile.am
+missing
+autom4te.cache
