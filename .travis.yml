@@ -1,0 +1,7 @@
+language: C
+notifications:
+  email:
+    recipients:
+      - mark.jeromin@sysfrog.net
+    on_success: never
+    on_failure: always
