@@ -5,15 +5,24 @@ jobs:
       - image: alpine:3.7
     steps:
       - checkout
+
       - run:
           name: install build tools
           command: apk add --no-cache gcc libc-dev autoconf automake make
+
       - run:
           name: make
           command: CC="gcc" ./configure && make
+
       - run:
           name: make sure it runs
           command: ./helloworld
+
       - run:
           name: normal tests
           command: tests/test1.sh
+
+      # Save artifacts
+      - store_artifacts:
+          path: ./helloworld
+          destination: helloworld
