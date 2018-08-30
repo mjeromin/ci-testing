@@ -2,12 +2,18 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+      - image: alpine:3.7
     steps:
       - checkout
       - run:
-          name: make
-          command: ./configure && make
+          name: install build tools
+          command: apk add --no-cache gcc libc-dev autoconf automake make
       - run:
-          name: test
+          name: make
+          command: CC="gcc" ./configure && make
+      - run:
+          name: make sure it runs
+          command: ./helloworld
+      - run:
+          name: normal tests
           command: tests/test1.sh
